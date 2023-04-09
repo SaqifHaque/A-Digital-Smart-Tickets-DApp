@@ -23,5 +23,6 @@ contract Tickets {
         require(_index < TOTAL_TICKETS && _index >= 0);
         require(tickets[_index].owner == address(0x0));
         require(msg.value >= tickets[_index].price);
+        tickets[_index].owner = msg.sender;
     }
 }
